@@ -1,5 +1,5 @@
 // Native imports
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import {
   ActivityIndicator,
   RefreshControl,
@@ -75,24 +75,24 @@ const HomeScreen = () => {
     loadPets();
   }, []);
 
-  const handlePetPress = (pet: Pet) => {
+  const handlePetPress = useCallback((pet: Pet) => {
     router.push(`/pet-details?petId=${pet.id}`);
-  };
+  }, [router]);
 
   // ----------------------------------- START: UI RENDER METHODS ----------------------------------------------- //
 
-  const renderPetItem = ({ item }: { item: Pet }) => {
+  const renderPetItem = useCallback(({ item }: { item: Pet }) => {
     const isAdoptedByMe = adoptedPets.some((p) => p.id === item.id);
     return (
       <PetCard
         pet={item}
-        onPress={() => handlePetPress(item)}
+        onPress={handlePetPress}
         adoptedByMe={isAdoptedByMe}
       />
     );
-  };
+  }, [adoptedPets, handlePetPress]);
 
-  const renderShimmerItem = () => <ShimmerCard />;
+  const renderShimmerItem = useCallback(() => <ShimmerCard />, []);
 
   const renderTitle = () => <Text style={styles.title}>Pets Watch</Text>;
 
@@ -115,29 +115,29 @@ const HomeScreen = () => {
     <Text style={styles.emptyText}>No pets available</Text>
   );
 
-  const renderEmpty = () => (
+  const renderEmpty = useCallback(() => (
     <View style={styles.emptyContainer}>{renderEmptyText()}</View>
-  );
+  ), []);
 
   const renderLoadingIndicator = () => (
     <ActivityIndicator size="small" color="#FF6B35" />
   );
 
-  const renderFooter = () => {
+  const renderFooter = useCallback(() => {
     if (!loadingMore) return null;
     return <View style={styles.footerLoading}>{renderLoadingIndicator()}</View>;
-  };
+  }, [loadingMore]);
 
-  const renderRefreshControl = () => (
+  const renderRefreshControl = useCallback(() => (
     <RefreshControl
       refreshing={refreshing}
       onRefresh={onRefresh}
       tintColor="#007AFF"
       colors={["#007AFF"]}
     />
-  );
+  ), [refreshing, onRefresh]);
 
-  const shimmerData = Array(pageSize).fill(null);
+  const shimmerData = useMemo(() => Array(pageSize).fill(null), []);
 
   const renderFlashList = () => (
     <FlashList

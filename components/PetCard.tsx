@@ -14,7 +14,7 @@ interface PetCardProps {
   adoptedByMe?: boolean;
 }
 
-const PetCard = ({ pet, onPress, adoptedByMe }: PetCardProps) => {
+const PetCard = React.memo(({ pet, onPress, adoptedByMe }: PetCardProps) => {
   const fallbackImageUrl =
     "https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=400&h=400&fit=crop";
 
@@ -121,6 +121,6 @@ const PetCard = ({ pet, onPress, adoptedByMe }: PetCardProps) => {
   if (!pet) return renderError();
 
   return renderCard();
-};
+});
 
 export default PetCard;

@@ -1,5 +1,5 @@
 // Native imports
-import React from "react";
+import React, { useCallback } from "react";
 import {
   Alert,
   FlatList,
@@ -26,11 +26,11 @@ const MyPets = () => {
   const router = useRouter();
   const { adoptedPets, removePet } = usePetContext();
 
-  const handlePetPress = (pet: Pet) => {
+  const handlePetPress = useCallback((pet: Pet) => {
     router.push(`/pet-details?petId=${pet.id}`);
-  };
+  }, [router]);
 
-  const handleRemovePet = (pet: Pet) => {
+  const handleRemovePet = useCallback((pet: Pet) => {
     Alert.alert(
       "Remove Pet",
       `Are you sure you want to remove ${pet.name} from your pets?`,
@@ -49,7 +49,7 @@ const MyPets = () => {
         },
       ],
     );
-  };
+  }, [removePet]);
 
   const getPetIcon = (type: string) => {
     switch (type) {
@@ -146,12 +146,12 @@ const MyPets = () => {
     </View>
   );
 
-  const renderPetCard = ({ item }: { item: Pet }) => (
+  const renderPetCard = useCallback(({ item }: { item: Pet }) => (
     <View style={styles.petCard}>
       {renderPetImage(item)}
       {renderPetInfo(item)}
     </View>
-  );
+  ), [renderPetImage, renderPetInfo, styles.petCard]);
 
   const renderTitle = () => <Text style={styles.title}>My Pets</Text>;
 
