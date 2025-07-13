@@ -15,7 +15,7 @@ import { useLocalSearchParams, useNavigation, useRouter } from "expo-router";
 
 // Component imports
 import { PaymentSheet } from "@/components/PaymentSheet";
-import ShimmerCard from "@/components/ShimmerCard";
+import PetDetailsShimmer from "@/components/PetDetailsShimmer";
 
 // Context imports
 import { usePetContext } from "@/context/pet-context";
@@ -49,7 +49,12 @@ const PetDetails = () => {
         headerBackTitle: "",
       });
     }
-    setLoading(false);
+    // Simulate loading for better UX
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+
+    return () => clearTimeout(timer);
   }, [pet]);
 
   const handleAdopt = () => {
@@ -93,17 +98,7 @@ const PetDetails = () => {
     }
   };
 
-  const renderLoading = () => {
-    if (loading) {
-      return (
-        <SafeAreaView style={styles.safeArea}>
-          <View style={{ margin: 16 }}>
-            <ShimmerCard />
-          </View>
-        </SafeAreaView>
-      );
-    }
-  };
+
 
   const renderHeader = () => {
     return (
@@ -257,6 +252,10 @@ const PetDetails = () => {
   };
 
   const renderContent = () => {
+    if (loading) {
+      return <PetDetailsShimmer />;
+    }
+
     return (
       <View style={styles.content}>
         {renderHeader()}
@@ -280,7 +279,7 @@ const PetDetails = () => {
     return (
       <SafeAreaView style={styles.safeArea}>
         <ScrollView style={styles.container}>
-          <Image source={{ uri: pet.imageUrl }} style={styles.image} />
+          {!loading && <Image source={{ uri: pet.imageUrl }} style={styles.image} />}
           {renderContent()}
         </ScrollView>
       </SafeAreaView>
@@ -290,7 +289,6 @@ const PetDetails = () => {
   // ----------------------------------- END: UI RENDER METHODS ----------------------------------------------- //
 
   if (!pet) return renderError();
-  if (loading) return renderLoading();
 
   return (
     <>

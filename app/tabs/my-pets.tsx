@@ -1,5 +1,5 @@
 // Native imports
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import {
   Alert,
   FlatList,
@@ -19,12 +19,25 @@ import { usePetContext } from "@/context/pet-context";
 // Types imports
 import { Pet } from "@/types/pet";
 
+// Component imports
+import PetShimmerCard from "@/components/PetShimmerCard";
+
 // Style imports
 import { myPetsStyles as styles } from "@/styles";
 
 const MyPets = () => {
   const router = useRouter();
   const { adoptedPets, removePet } = usePetContext();
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Simulate loading for demonstration
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const handlePetPress = useCallback((pet: Pet) => {
     router.push(`/pet-details?petId=${pet.id}`);
@@ -196,6 +209,18 @@ const MyPets = () => {
     </View>
   );
 
+  const renderShimmerCard = useCallback(({ item }: { item: number }) => <PetShimmerCard />, []);
+
+  const renderShimmerList = () => (
+    <FlatList
+      data={[1, 2, 3]} // Show 3 shimmer cards
+      renderItem={renderShimmerCard}
+      keyExtractor={(item) => `shimmer-${item}`}
+      showsVerticalScrollIndicator={false}
+      contentContainerStyle={styles.listContainer}
+    />
+  );
+
   const renderPetList = () => (
     <FlatList
       data={adoptedPets}
@@ -207,6 +232,10 @@ const MyPets = () => {
   );
 
   const renderMainContent = () => {
+    if (isLoading) {
+      return renderShimmerList();
+    }
+
     if (adoptedPets.length === 0) {
       return renderEmptyContent();
     }
