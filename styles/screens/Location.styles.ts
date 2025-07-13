@@ -10,7 +10,7 @@ export const locationStyles = StyleSheet.create({
     backgroundColor: "#f8f9fa",
   },
   header: {
-    paddingTop: 60,
+    paddingTop: 20,
     paddingBottom: 20,
     paddingHorizontal: 16,
     backgroundColor: "#f8f9fa",
