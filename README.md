@@ -91,22 +91,36 @@ Here are screenshots of all main screens in the Pet Watch app:
 >
 > After building, open the app on your device or emulator. You can then use the QR code or launch directly from your development tools.
 
-4. **Run on your preferred platform:**
-   - **On a real device:**
-     - Download the [Expo Go](https://expo.dev/client) app from the App Store (iOS) or Google Play (Android).
-     - Scan the QR code in Expo Dev Tools to open the app on your device instantly.
+4. **Run the app on your preferred platform:**
+
+   - **On a real device (development build required):**
+     - Build and install the app using:
+       - For iOS:
+         ```bash
+         npx expo run:ios
+         ```
+       - For Android:
+         ```bash
+         npx expo run:android
+         ```
+     - Open the app directly on your device after the build completes.
+
    - **On an iOS simulator:**
-     - Press `i` in the Expo Dev Tools, or run:
+     - Make sure you have Xcode installed.
+     - In Expo Dev Tools, press `i` or run:
        ```bash
        npx expo run:ios
        ```
+
    - **On an Android emulator:**
-     - Press `a` in the Expo Dev Tools, or run:
+     - Make sure you have Android Studio and an emulator set up.
+     - In Expo Dev Tools, press `a` or run:
        ```bash
        npx expo run:android
        ```
+
    - **On the web:**
-     - Press `w` in the Expo Dev Tools, or run:
+     - In Expo Dev Tools, press `w` or run:
        ```bash
        npx expo start --web
        ```
