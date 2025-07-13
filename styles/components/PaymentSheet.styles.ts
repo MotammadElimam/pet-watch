@@ -1,0 +1,113 @@
+import { StyleSheet } from "react-native";
+
+export const paymentSheetStyles = StyleSheet.create({
+  title: {
+    fontSize: 28,
+    fontWeight: "bold",
+    color: "#333",
+    marginBottom: 4,
+    textAlign: "center",
+  },
+  subtitle: {
+    fontSize: 16,
+    color: "#666",
+    marginBottom: 16,
+    textAlign: "center",
+  },
+  petSummary: {
+    backgroundColor: "#f8f9fa",
+    marginBottom: 20,
+    padding: 16,
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: "#e9ecef",
+  },
+  petName: {
+    fontSize: 18,
+    fontWeight: "600",
+    color: "#333",
+    marginBottom: 4,
+  },
+  petPrice: {
+    fontSize: 16,
+    color: "#2196F3",
+    fontWeight: "600",
+  },
+  formContainer: {
+    flex: 1,
+    paddingBottom: 20,
+  },
+  sectionTitle: {
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#333",
+    marginBottom: 16,
+    marginTop: 8,
+  },
+  inputGroup: {
+    marginBottom: 16,
+  },
+  label: {
+    fontSize: 14,
+    fontWeight: "600",
+    color: "#333",
+    marginBottom: 8,
+  },
+  input: {
+    backgroundColor: "white",
+    borderWidth: 1,
+    borderColor: "#ddd",
+    borderRadius: 8,
+    paddingHorizontal: 12,
+    paddingVertical: 12,
+    fontSize: 16,
+    minHeight: 48,
+  },
+  row: {
+    flexDirection: "row",
+  },
+  payButton: {
+    backgroundColor: "#4CAF50",
+    paddingVertical: 16,
+    paddingHorizontal: 24,
+    borderRadius: 12,
+    alignItems: "center",
+    marginBottom: 12,
+    minHeight: 56,
+    justifyContent: "center",
+    marginTop: 8,
+  },
+  payButtonDisabled: {
+    backgroundColor: "#ccc",
+  },
+  payButtonText: {
+    color: "white",
+    fontSize: 18,
+    fontWeight: "bold",
+  },
+  cancelButton: {
+    paddingVertical: 16,
+    paddingHorizontal: 24,
+    borderRadius: 12,
+    alignItems: "center",
+    borderWidth: 1,
+    borderColor: "#ddd",
+    minHeight: 56,
+    justifyContent: "center",
+    marginBottom: 8,
+  },
+  cancelButtonText: {
+    color: "#666",
+    fontSize: 16,
+    fontWeight: "600",
+  },
+  buttonGroup: {
+    paddingTop: 8,
+    paddingBottom: 20,
+    backgroundColor: "white",
+    width: "100%",
+    borderTopWidth: 1,
+    borderTopColor: "#eee",
+    paddingHorizontal: 16,
+  },
+});

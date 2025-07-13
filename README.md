@@ -1,50 +1,60 @@
-# Welcome to your Expo app 👋
+# Pet Watch - Pet Adoption App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A React Native mobile application for browsing and adopting pets. Built with Expo and TypeScript.
 
-## Get started
+## Features
 
-1. Install dependencies
+### 🐾 Pet Browsing
 
-   ```bash
-   npm install
-   ```
+- Browse a curated list of pets available for adoption
+- View detailed pet information including breed, age, health status, and compatibility
+- Beautiful card-based UI with pet images and key details
 
-2. Start the app
+### 📱 Pet Details
 
-   ```bash
-   npx expo start
-   ```
+- Comprehensive pet profiles with all relevant information
+- Health status indicators (vaccinated, neutered)
+- Compatibility tags showing what the pet is good with
+- Location information with map integration
+- Direct adoption button
 
-In the output, you'll find options to open the app in a
+### 💳 Mock Payment System
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- Complete payment form with validation
+- Credit card information input with formatting
+- Contact information collection
+- Simulated payment processing with success confirmation
+- Terms and conditions acceptance
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### 📍 Location Services
 
-## Get a fresh project
+- Device location simulation
+- Pet location display with coordinates
+- Distance calculation between user and pet
+- Simulated Google Maps interface
+- Get directions functionality
 
-When you're ready, run:
+### ❤️ My Pets
 
-```bash
-npm run reset-project
+- View adopted pets collection
+- Pet management with remove functionality
+- Health information quick access
+- Statistics dashboard (total pets, dogs, cats, others)
+- Empty state with call-to-action
+
+## Screenshots
+
+Here are some screenshots of the Pet Watch app in action:
+
+<p align="center">
+  <img src="assets/screenshots/Screenshot 2025-07-13 at 5.03.51 PM.png" alt="Home Screen" width="250" />
+  <img src="assets/screenshots/Screenshot 2025-07-13 at 5.11.17 PM.png" alt="Pet Details" width="250" />
+  <img src="assets/screenshots/Screenshot 2025-07-13 at 5.11.21 PM.png" alt="Location Screen" width="250" />
+  <img src="assets/screenshots/Screenshot 2025-07-13 at 5.11.24 PM.png" alt="Adoption Payment" width="250" />
+</p>
+
+## Installation
+
+1. Clone the repository:
+
 ```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
