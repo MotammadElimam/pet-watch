@@ -41,6 +41,15 @@ A React Native mobile application for browsing and adopting pets. Built with Exp
 - Health information quick access
 - Statistics dashboard (total pets, dogs, cats, others)
 - Empty state with call-to-action
+- **Custom shimmer loading effects** for smooth user experience
+
+### ✨ Loading & Shimmer Effects
+
+- **PetShimmerCard**: Custom shimmer component for pet cards in My Pets screen
+- **PetDetailsShimmer**: Comprehensive shimmer for pet details page
+- **Animated shimmer effects** using react-native-reanimated and expo-linear-gradient
+- **Accurate layout matching** - shimmer placeholders match real content dimensions
+- **Smooth loading transitions** with 1.5-2 second loading states for demonstration
 
 ## Screenshots
 
@@ -136,9 +145,17 @@ pet-watch/
 │   ├── pet-details.tsx   # Pet details screen
 │   └── tabs/             # Tab navigation and screens
 ├── components/           # Reusable UI components
+│   ├── PetShimmerCard.tsx    # Shimmer for pet cards
+│   ├── PetDetailsShimmer.tsx # Shimmer for pet details
+│   └── ShimmerCard.tsx       # Generic shimmer component
 ├── context/              # React context providers
 ├── data/                 # Mock data (e.g., pets)
 ├── styles/               # All style files (components & screens)
+│   ├── components/       # Component-specific styles
+│   │   ├── PetShimmerCard.styles.ts
+│   │   ├── PetDetailsShimmer.styles.ts
+│   │   └── ShimmerCard.styles.ts
+│   └── screens/          # Screen-specific styles
 ├── types/                # TypeScript types
 ├── utils/                # Utility functions
 ├── assets/
@@ -160,6 +177,8 @@ pet-watch/
 - **Expo Router**: File-based navigation
 - **react-native-maps**: Real map view integration
 - **@shopify/flash-list**: High-performance list rendering
+- **react-native-reanimated**: Smooth animations for shimmer effects
+- **expo-linear-gradient**: Gradient overlays for shimmer animations
 
 ## Development Notes
 
@@ -168,3 +187,25 @@ pet-watch/
 - Pet adoption status is managed through local state
 - Images are loaded from Unsplash CDN or local assets
 - Code is modular, with styles separated for maintainability
+
+## Shimmer Implementation
+
+The app includes sophisticated shimmer loading effects that provide a smooth user experience:
+
+### Components
+- **PetShimmerCard**: Matches the exact layout of pet cards in the My Pets screen
+- **PetDetailsShimmer**: Comprehensive shimmer for the entire pet details page
+- **ShimmerCard**: Generic shimmer component for other use cases
+
+### Features
+- **Animated shimmer effect**: Uses `react-native-reanimated` for smooth 800ms animations
+- **Gradient overlay**: `expo-linear-gradient` creates the shimmer effect
+- **Layout accuracy**: Shimmer placeholders match real content dimensions exactly
+- **Loading states**: 1.5-2 second loading simulation for demonstration
+- **Responsive design**: Adapts to different screen sizes
+
+### Usage
+Shimmer effects automatically show when:
+- Navigating to My Pets screen (2-second loading)
+- Loading pet details (1.5-second loading)
+- Any other loading states in the app
