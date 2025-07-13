@@ -77,6 +77,20 @@ Here are screenshots of all main screens in the Pet Watch app:
    ```
    This will open the Expo Dev Tools in your browser.
 
+> **Note:**
+> For full functionality (such as maps), you must use a development build of the app. The standard Expo Go app does **not** support all required native modules.
+>
+> - To create a development build for iOS:
+>   ```bash
+>   npx expo run:ios
+>   ```
+> - To create a development build for Android:
+>   ```bash
+>   npx expo run:android
+>   ```
+>
+> After building, open the app on your device or emulator. You can then use the QR code or launch directly from your development tools.
+
 4. **Run on your preferred platform:**
    - **On a real device:**
      - Download the [Expo Go](https://expo.dev/client) app from the App Store (iOS) or Google Play (Android).
@@ -130,11 +144,8 @@ pet-watch/
 - **Expo**: Development/build tooling for React Native
 - **TypeScript**: Type-safe JavaScript
 - **Expo Router**: File-based navigation
-- **React Navigation**: Navigation library
 - **react-native-maps**: Real map view integration
 - **@shopify/flash-list**: High-performance list rendering
-- **Prettier**: Code formatting
-- **Other Expo/React Native libraries**: For UI, icons, location, etc.
 
 ## Development Notes
 
@@ -143,4 +154,3 @@ pet-watch/
 - Pet adoption status is managed through local state
 - Images are loaded from Unsplash CDN or local assets
 - Code is modular, with styles separated for maintainability
-- The codebase is formatted with Prettier for consistency
