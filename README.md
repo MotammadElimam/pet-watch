@@ -71,19 +71,31 @@ Here are screenshots of all main screens in the Pet Watch app:
    ```bash
    npm install
    ```
-3. **Start the development server:**
+3. **Start the Expo development server:**
    ```bash
-   npm start
+   npx expo start
    ```
+   This will open the Expo Dev Tools in your browser.
+
 4. **Run on your preferred platform:**
-   ```bash
-   # iOS
-   npm run ios
-   # Android
-   npm run android
-   # Web
-   npm run web
-   ```
+   - **On a real device:**
+     - Download the [Expo Go](https://expo.dev/client) app from the App Store (iOS) or Google Play (Android).
+     - Scan the QR code in Expo Dev Tools to open the app on your device instantly.
+   - **On an iOS simulator:**
+     - Press `i` in the Expo Dev Tools, or run:
+       ```bash
+       npx expo run:ios
+       ```
+   - **On an Android emulator:**
+     - Press `a` in the Expo Dev Tools, or run:
+       ```bash
+       npx expo run:android
+       ```
+   - **On the web:**
+     - Press `w` in the Expo Dev Tools, or run:
+       ```bash
+       npx expo start --web
+       ```
 
 ## Project Structure
 
