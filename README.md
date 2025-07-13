@@ -145,13 +145,19 @@ pet-watch/
 │   ├── pet-details.tsx   # Pet details screen
 │   └── tabs/             # Tab navigation and screens
 ├── components/           # Reusable UI components
+│   ├── BottomSheet.tsx       # Bottom sheet component
+│   ├── PaymentSheet.tsx      # Payment form component
+│   ├── PetCard.tsx           # Pet card component
 │   ├── PetShimmerCard.tsx    # Shimmer for pet cards
 │   ├── PetDetailsShimmer.tsx # Shimmer for pet details
-│   └── ShimmerCard.tsx       # Generic shimmer component
+│   ├── ShimmerCard.tsx       # Generic shimmer component
 ├── context/              # React context providers
 ├── data/                 # Mock data (e.g., pets)
 ├── styles/               # All style files (components & screens)
 │   ├── components/       # Component-specific styles
+│   │   ├── BottomSheet.styles.ts
+│   │   ├── PaymentSheet.styles.ts
+│   │   ├── PetCard.styles.ts
 │   │   ├── PetShimmerCard.styles.ts
 │   │   ├── PetDetailsShimmer.styles.ts
 │   │   └── ShimmerCard.styles.ts
