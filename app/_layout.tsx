@@ -22,7 +22,10 @@ export default function RootLayout() {
             options={({ navigation }) => ({
               title: "",
               headerLeft: () => (
-                <Pressable onPress={() => navigation.goBack()}>
+                <Pressable
+                  onPress={() => navigation.goBack()}
+                  style={{ marginLeft: -10 }}
+                >
                   <Ionicons
                     name={Platform.OS === "ios" ? "chevron-back" : "arrow-back"}
                     size={28}
@@ -57,7 +60,7 @@ export default function RootLayout() {
               headerLeft: () => (
                 <Pressable
                   onPress={() => navigation.goBack()}
-                  style={{ marginLeft: 16 }}
+                  style={{ marginLeft: -10 }}
                 >
                   <Ionicons
                     name={Platform.OS === "ios" ? "chevron-back" : "arrow-back"}
