@@ -44,17 +44,91 @@ A React Native mobile application for browsing and adopting pets. Built with Exp
 
 ## Screenshots
 
-Here are some screenshots of the Pet Watch app in action:
+Here are screenshots of all main screens in the Pet Watch app:
 
 <p align="center">
-  <img src="assets/screenshots/Screenshot 2025-07-13 at 5.03.51 PM.png" alt="Home Screen" width="250" />
-  <img src="assets/screenshots/Screenshot 2025-07-13 at 5.11.17 PM.png" alt="Pet Details" width="250" />
-  <img src="assets/screenshots/Screenshot 2025-07-13 at 5.11.21 PM.png" alt="Location Screen" width="250" />
-  <img src="assets/screenshots/Screenshot 2025-07-13 at 5.11.24 PM.png" alt="Adoption Payment" width="250" />
+  <img src="assets/screenshots/Screenshot 2025-07-13 at 5.03.51 PM.png" alt="Screen 1" width="250" />
+  <img src="assets/screenshots/Screenshot 2025-07-13 at 5.11.17 PM.png" alt="Screen 2" width="250" />
+  <img src="assets/screenshots/Screenshot 2025-07-13 at 5.11.21 PM.png" alt="Screen 3" width="250" />
+  <img src="assets/screenshots/Screenshot 2025-07-13 at 5.11.24 PM.png" alt="Screen 4" width="250" />
+  <img src="assets/screenshots/Screenshot 2025-07-13 at 5.11.28 PM.png" alt="Screen 5" width="250" />
+  <img src="assets/screenshots/Screenshot 2025-07-13 at 5.11.45 PM.png" alt="Screen 6" width="250" />
+  <img src="assets/screenshots/Screenshot 2025-07-13 at 5.11.50 PM.png" alt="Screen 7" width="250" />
+  <img src="assets/screenshots/Screenshot 2025-07-13 at 5.11.52 PM.png" alt="Screen 8" width="250" />
+  <img src="assets/screenshots/Screenshot 2025-07-13 at 5.11.55 PM.png" alt="Screen 9" width="250" />
+  <img src="assets/screenshots/Screenshot 2025-07-13 at 5.12.00 PM.png" alt="Screen 10" width="250" />
+  <img src="assets/screenshots/Screenshot 2025-07-13 at 5.12.36 PM.png" alt="Screen 11" width="250" />
 </p>
 
 ## Installation
 
-1. Clone the repository:
+1. **Clone the repository:**
+   ```bash
+   git clone <repository-url>
+   cd pet-watch
+   ```
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+3. **Start the development server:**
+   ```bash
+   npm start
+   ```
+4. **Run on your preferred platform:**
+   ```bash
+   # iOS
+   npm run ios
+   # Android
+   npm run android
+   # Web
+   npm run web
+   ```
+
+## Project Structure
 
 ```
+pet-watch/
+├── app/                  # App entry points and screens
+│   ├── _layout.tsx       # Main navigation layout
+│   ├── index.tsx         # Home screen
+│   ├── location.tsx      # Location/map screen
+│   ├── pet-details.tsx   # Pet details screen
+│   └── tabs/             # Tab navigation and screens
+├── components/           # Reusable UI components
+├── context/              # React context providers
+├── data/                 # Mock data (e.g., pets)
+├── styles/               # All style files (components & screens)
+├── types/                # TypeScript types
+├── utils/                # Utility functions
+├── assets/
+│   ├── fonts/            # Custom fonts
+│   ├── images/           # App icons and images
+│   └── screenshots/      # App screenshots for README
+├── android/              # Android native project
+├── ios/                  # iOS native project
+├── package.json          # Project metadata and scripts
+├── app.json              # Expo configuration
+└── README.md             # Project documentation
+```
+
+## Technologies Used
+
+- **React Native**: Cross-platform mobile app framework
+- **Expo**: Development/build tooling for React Native
+- **TypeScript**: Type-safe JavaScript
+- **Expo Router**: File-based navigation
+- **React Navigation**: Navigation library
+- **react-native-maps**: Real map view integration
+- **@shopify/flash-list**: High-performance list rendering
+- **Prettier**: Code formatting
+- **Other Expo/React Native libraries**: For UI, icons, location, etc.
+
+## Development Notes
+
+- All location services use real device GPS (with permissions)
+- Payment processing is mocked for demo purposes
+- Pet adoption status is managed through local state
+- Images are loaded from Unsplash CDN or local assets
+- Code is modular, with styles separated for maintainability
+- The codebase is formatted with Prettier for consistency
